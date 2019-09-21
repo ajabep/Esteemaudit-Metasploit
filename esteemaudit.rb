@@ -49,7 +49,7 @@ class MetasploitModule < Msf::Exploit::Remote
 
 	register_options([
 		OptEnum.new('TARGETARCHITECTURE', [true,'Target Architecture','x86',['x86','x86 64-bit']]),
-		OptString.new('ESTEEMAUDITPATH',[true,'Path directory of Esteemaudit.exe','/usr/share/esteemaudit/']),
+		OptString.new('ESTEEMAUDITPATH',[true,'Path directory of Esteemaudit.exe',File.join(File.expand_path(File.dirname(__FILE__)), "files")]),
 		OptString.new('RPORT',[true,'The RDP service port','3389']),
 		OptString.new('WINEPATH',[true,'WINE drive_c path','/root/.wine/drive_c/'])
 	], self.class)
